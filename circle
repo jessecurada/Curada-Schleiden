@@ -1,16 +1,23 @@
-import colorsys
-import turtle
-t = turtle.Turtle()
-s = turtle.Screen().bgcolor('black')
-t.speed(0)
-n = 70
-h = 0
-for i in range (360):
-    c = colorsys.hsv_to_rgb(h, 1, 0.8)
-    h += 1/n
-    t.color(c)
-    t.left(1)
-    t.fd(1)
-    for j in range (2):
-        t.left(2)
-        t.circle(100)
+import colorsys  # Imports colorsys 
+import turtle  # Imports turtle for drawing
+
+t = turtle.Turtle()  # Create a turtle object
+s = turtle.Screen().bgcolor('black')  # Set background color to black
+t.speed(0)  # Set turtle speed to the fastest
+
+n = 70  # Number of color variations
+h = 0  # Initial hue value
+
+for i in range(360):  # Loop to draw for 360 degrees to create a full circle
+    c = colorsys.hsv_to_rgb(h, 1, 0.8)  # Converts HSV to RGB
+    h += 1 / n  # Increment hue for color transition
+    t.color(c)  # Set turtle pen color
+    
+    t.left(1)  # Turn left by 1 degree
+    t.fd(1)  # Move forward by 1 unit
+
+    for j in range(2):  # Inner loop to create additional circular effects
+        t.left(2)  # Slight left turn
+        t.circle(100)  # Draw a circle with radius 100
+
+turtle.done()  # Finish drawing and keep the window open
